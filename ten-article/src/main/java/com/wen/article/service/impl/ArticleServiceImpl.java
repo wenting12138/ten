@@ -19,7 +19,8 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Resource
     private ArticleMapper articleMapper;
-
+    @Resource
+    private IdWorker idWorker;
     @Override
     public ResultService<Article> selectOneById(String id) {
         Article article = articleMapper.selectOneById(id);
@@ -43,7 +44,7 @@ public class ArticleServiceImpl implements ArticleService {
     public ResultService<Void> save(ArticleDto articleDto) {
         // 将articleDto 转为 article
         Article article = wrapperArticle(articleDto);
-        article.setId(new IdWorker().nextId() + "");
+        article.setId(idWorker.nextId() + "");
         article.setCreateTime(new Date());
         article.setUpdateTime(new Date());
         int effect = articleMapper.save(article);
