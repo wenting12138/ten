@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wen.article.dao.ArticleMapper">
+    <resultMap id="BaseResultMap" type="com.wen.common.model.Article">
+        <id property="id" column="id"/>
+        <id property="columnId" column="columnid"/>
+        <id property="userId" column="userid"/>
+        <id property="title" column="title"/>
+        <id property="content" column="content"/>
+        <id property="image" column="image"/>
+        <id property="createTime" column="createtime"/>
+        <id property="updateTime" column="updatetime"/>
+        <id property="isPublic" column="ispublic"/>
+        <id property="isTop" column="istop"/>
+        <id property="visits" column="visits"/>
+        <id property="thumbup" column="thumbup"/>
+        <id property="comment" column="comment"/>
+        <id property="state" column="state"/>
+        <id property="channelId" column="channelid"/>
+        <id property="url" column="url"/>
+        <id property="type" column="type"/>
+    </resultMap>
+    <sql id="dynamicSql">
+        id,columnid,userid,title,content,image,createtime,updatetime,ispublic,istop,visits,thumbup,comment,state,channelid,url,type
+    </sql>
+<!--    Article selectOneById(@Param("id") String articleId);-->
+    <select id="selectOneById" parameterType="string" resultMap="BaseResultMap">
+        select
+        <include refid="dynamicSql"/>
+        from tb_article
+        where id = #{id}
+    </select>
+
+<!--    List<Article> selectAll();-->
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="dynamicSql"/>
+        from tb_article
+    </select>
+
+<!--    int save(Article article);-->
+    <insert id="save" parameterType="com.wen.common.model.Article">
+        insert into tb_article(
+            <include refid="dynamicSql"/>
+        )
+        values(#{id},#{columnId},#{userId},#{title},#{content},#{image},#{createTime},#{updateTime},#{isPublic},#{isTop},#{visits},#{thumbup},#{comment},#{state},#{channelId},#{url},#{type})
+    </insert>
+
+<!--        int update(Article article);-->
+    <update id="update" parameterType="com.wen.common.model.Article">
+        update tb_article
+        <set>
+            <if test="columnId != null">
+                columnid = #{columnId},
+            </if>
+            <if test="userId != null">
+                userid = #{userId},
+            </if>
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="content != null">
+                content = #{content},
+            </if>
+            <if test="image != null">
+                image = #{image},
+            </if>
+            <if test="createTime != null">
+                createtime = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                updatetime = #{updateTime},
+            </if>
+            <if test="isPublic != null">
+                ispublic = #{isPublic},
+            </if>
+            <if test="isTop != null">
+                istop = #{isTop},
+            </if>
+            <if test="visits != null">
+                visits = #{visits},
+            </if>
+            <if test="thumbup != null">
+                thumbup = #{thumbup},
+            </if>
+            <if test="comment != null">
+                comment = #{comment},
+            </if>
+            <if test="state != null">
+                state = #{state},
+            </if>
+            <if test="channelId != null">
+                channelid = #{channelId},
+            </if>
+            <if test="url != null">
+                url = #{url},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+<!--        List<Article> selectByCondition(Article article);-->
+    <select id="selectByCondition" resultMap="BaseResultMap" parameterType="com.wen.common.model.Article">
+        select
+        <include refid="dynamicSql"/>
+        from tb_article
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="columnId != null">
+                and columnid = #{columnId}
+            </if>
+            <if test="userId != null">
+                and userid = #{userId}
+            </if>
+            <if test="title != null">
+                and title = #{title}
+            </if>
+            <if test="content != null">
+                and content = #{content}
+            </if>
+            <if test="image != null">
+                and image = #{image}
+            </if>
+            <if test="createTime != null &amp; createTime != ''">
+                and createtime = #{createTime}
+            </if>
+            <if test="updateTime != null &amp; updateTime != ''">
+                and updatetime = #{updateTime}
+            </if>
+            <if test="isPublic != null">
+                and ispublic = #{isPublic}
+            </if>
+            <if test="isTop != null">
+                and istop = #{isTop}
+            </if>
+            <if test="visits != null">
+                and visits = #{visits}
+            </if>
+            <if test="thumbup != null">
+                and thumbup = #{thumbup}
+            </if>
+            <if test="comment != null">
+                and comment = #{comment}
+            </if>
+            <if test="state != null">
+                and state = #{state}
+            </if>
+            <if test="channelId != null">
+                and channelid = #{channelId}
+            </if>
+            <if test="url != null">
+                and url = #{url}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+        </where>
+    </select>
+
+<!--        void deleteById(String articleId);-->
+    <delete id="deleteById" parameterType="string">
+        delete from tb_article where id = #{id}
+    </delete>
+<!--List<Article> selectByConditionPageSize(@Param("article") Article article, @Param("page") Integer page,@Param("size") Integer size);-->
+    <select id="selectByConditionPageSize" resultMap="BaseResultMap">
+        select
+        <include refid="dynamicSql"/>
+        from tb_article
+        <where>
+            <if test="article.id != null &amp; article.id != ''">
+                and id = #{article.id}
+            </if>
+            <if test="article.columnId != null">
+                and columnid = #{article.columnId}
+            </if>
+            <if test="article.userId != null">
+                and userid = #{article.userId}
+            </if>
+            <if test="article.title != null">
+                and title = #{article.title}
+            </if>
+            <if test="article.content != null">
+                and content = #{article.content}
+            </if>
+            <if test="article.image != null">
+                and image = #{article.image}
+            </if>
+            <if test="article.createTime != null &amp; article.createTime != ''">
+                and createtime = #{article.createTime}
+            </if>
+            <if test="article.updateTime != null &amp; article.updateTime != ''">
+                and updatetime = #{article.updateTime}
+            </if>
+            <if test="article.isPublic != null">
+                and ispublic = #{article.isPublic}
+            </if>
+            <if test="article.isTop != null">
+                and istop = #{article.isTop}
+            </if>
+            <if test="article.visits != null">
+                and visits = #{article.visits}
+            </if>
+            <if test="article.thumbup != null">
+                and thumbup = #{article.thumbup}
+            </if>
+            <if test="article.comment != null">
+                and comment = #{article.comment}
+            </if>
+            <if test="article.state != null">
+                and state = #{article.state}
+            </if>
+            <if test="article.channelId != null">
+                and channelid = #{article.channelId}
+            </if>
+            <if test="article.url != null">
+                and url = #{article.url}
+            </if>
+            <if test="article.type != null">
+                and type = #{article.type}
+            </if>
+        </where>
+        limit #{page}, #{size}
+    </select>
+
+<!--    void addThumbup(@Param("id") String articleId);-->
+    <update id="addThumbup" parameterType="string">
+        update tb_article set thumbup = thumbup + 1 where id = id
+    </update>
+
+<!--    List<Article> getArticleByChannelPageSize(@Param("channel") String channel,@Param("page") int page,@Param("size") int size);-->
+    <select id="getArticleByChannelPageSize" resultMap="BaseResultMap">
+        select
+        <include refid="dynamicSql"/>
+        from tb_article
+        <where>
+            <if test="channel != null &amp; channel != ''">
+                channelid = #{channel}
+            </if>
+        </where>
+        limit #{page}, #{size}
+    </select>
+
+<!-- List<Article> getArticleBycolumnIdPageSize(@Param("columnId")String columnId,@Param("page") int page,@Param("size") int size);-->
+    <select id="getArticleBycolumnIdPageSize" resultMap="BaseResultMap">
+        select
+        <include refid="dynamicSql"/>
+        from tb_article
+        <where>
+            <if test="columnId != null &amp; columnId != ''">
+                columnid = #{columnId}
+            </if>
+        </where>
+        limit #{page}, #{size}
+    </select>
+
+<!--        void check(@Param("id") String articleId);-->
+    <update id="check" parameterType="string">
+        update tb_article
+        set state = #{state}
+        where id = #{id}
+    </update>
+
+<!--  List<Article> topArticle(String top);-->
+    <select id="topArticle" parameterType="string" resultMap="BaseResultMap">
+        select
+        <include refid="dynamicSql"/>
+        from tb_article
+        where istop = #{top}
+    </select>
+</mapper>
