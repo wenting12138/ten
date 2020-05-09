@@ -1,9 +1,10 @@
 package com.wen.common.model;
 
 import lombok.Data;
-
 import java.util.Date;
-
+/**
+ *  文章
+ */
 @Data
 public class Article {
 

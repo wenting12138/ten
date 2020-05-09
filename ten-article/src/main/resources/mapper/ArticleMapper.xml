@@ -274,4 +274,9 @@
         from tb_article
         where istop = #{top}
     </select>
+
+<!--    Long getCount();-->
+    <select id="getCount" resultType="long">
+        select count(*) from tb_article
+    </select>
 </mapper>

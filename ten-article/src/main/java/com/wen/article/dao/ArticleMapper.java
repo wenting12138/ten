@@ -33,4 +33,7 @@ public interface ArticleMapper{
     void check(@Param("id") String articleId, @Param("state") String state);
 
     List<Article> topArticle(String top);
+
+    Long getCount();
+
 }

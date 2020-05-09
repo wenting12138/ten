@@ -94,10 +94,11 @@ public class ArticleServiceImpl implements ArticleService {
         }
         page = (page - 1) * size;
         List<Article> articles = articleMapper.selectByConditionPageSize(article, page, size);
+        Long count = getCount();
         if (articles == null || articles.isEmpty()) {
             return new ResultService<>(false);
         }
-        return new ResultService<>(true, articles.size(), articles);
+        return new ResultService<>(true,count.intValue(), articles);
     }
 
     @Override
@@ -116,10 +117,11 @@ public class ArticleServiceImpl implements ArticleService {
         }
         page = (page - 1) * size;
         List<Article> articles = articleMapper.getArticleByChannelPageSize(channel, page, size);
+        Long count = getCount();
         if (articles == null || articles.isEmpty()) {
             return new ResultService<>(false);
         }
-        return new ResultService<>(true, articles.size(), articles);
+        return new ResultService<>(true, count.intValue(), articles);
     }
 
     @Override
@@ -132,10 +134,11 @@ public class ArticleServiceImpl implements ArticleService {
         }
         page = (page - 1) * size;
         List<Article> articles = articleMapper.getArticleBycolumnIdPageSize(columnId, page, size);
+        Long count = getCount();
         if (articles == null || articles.isEmpty()) {
             return new ResultService<>(false);
         }
-        return new ResultService<>(true, articles.size(), articles);
+        return new ResultService<>(true, count.intValue(), articles);
     }
 
     @Override
@@ -151,6 +154,10 @@ public class ArticleServiceImpl implements ArticleService {
             return new ResultService<>(false);
         }
         return new ResultService<>(true, articles.size(), articles);
+    }
+
+    private Long getCount(){
+        return articleMapper.getCount();
     }
 
     private Article wrapperArticle(ArticleDto articleDto) {

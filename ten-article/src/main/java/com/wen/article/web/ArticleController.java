@@ -4,6 +4,7 @@ import com.sun.org.apache.regexp.internal.RE;
 import com.wen.article.dto.ArticleDto;
 import com.wen.article.service.ArticleService;
 import com.wen.common.model.Article;
+import com.wen.common.result.PageResult;
 import com.wen.common.result.Result;
 import com.wen.common.result.ResultCode;
 import com.wen.common.result.ResultService;
@@ -97,7 +98,8 @@ public class ArticleController {
         }
         service = articleService.selectByConditionPageSize(article, page, size);
         if (service.isB()) {
-            return Result.ok(ResultCode.SUCCESS, service.getRows());
+
+            return Result.ok(ResultCode.SUCCESS, new PageResult<>(service.getTotal().longValue(),service.getRows()));
         }
         return Result.ok(ResultCode.FAIL, null);
     }
@@ -136,7 +138,7 @@ public class ArticleController {
                                               @PathVariable(value = "size", required = false) int size){
         ResultService<List<Article>> service = articleService.getArticleByChannelPageSize(channeIdl, page, size);
         if (service.isB()) {
-            return Result.ok(ResultCode.SUCCESS, service.getRows());
+            return Result.ok(ResultCode.SUCCESS, new PageResult<>(service.getTotal().longValue(),service.getRows()));
         }
         return Result.ok(ResultCode.FAIL, null);
     }
