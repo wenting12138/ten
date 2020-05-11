@@ -231,7 +231,7 @@
 
 <!--    void addThumbup(@Param("id") String articleId);-->
     <update id="addThumbup" parameterType="string">
-        update tb_article set thumbup = thumbup + 1 where id = id
+        update tb_article set thumbup = thumbup + 1 where id = #{id}
     </update>
 
 <!--    List<Article> getArticleByChannelPageSize(@Param("channel") String channel,@Param("page") int page,@Param("size") int size);-->

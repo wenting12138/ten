@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/article")
@@ -65,7 +66,7 @@ public class ArticleController {
         return Result.ok(ResultCode.FAIL, null);
     }
 
-    /**
+    /*
      *  修改文章
      * @param article
      * @return
@@ -89,17 +90,17 @@ public class ArticleController {
     public Result selectByCondition(@RequestBody(required = false) ArticleDto article,
                                     @PathVariable(value = "page", required = false) Integer page,
                                     @PathVariable(value = "size", required = false) Integer size){
-        ResultService<List<Article>> service = null;
+        ResultService<PageResult<Article>> service = null;
         if (article == null) {
             article = new ArticleDto();
         }
         if (page == null || size == null) {
             service = articleService.selectByCondition(article);
+        }else {
+            service = articleService.selectByConditionPageSize(article, page, size);
         }
-        service = articleService.selectByConditionPageSize(article, page, size);
         if (service.isB()) {
-
-            return Result.ok(ResultCode.SUCCESS, new PageResult<>(service.getTotal().longValue(),service.getRows()));
+            return Result.ok(ResultCode.SUCCESS, service.getRows());
         }
         return Result.ok(ResultCode.FAIL, null);
     }
@@ -136,9 +137,9 @@ public class ArticleController {
     public Result getArticleByChannelPageSize(@PathVariable("channelId") String channeIdl,
                                               @PathVariable(value = "page", required = false) int page,
                                               @PathVariable(value = "size", required = false) int size){
-        ResultService<List<Article>> service = articleService.getArticleByChannelPageSize(channeIdl, page, size);
+        ResultService<PageResult<Article>> service = articleService.getArticleByChannelPageSize(channeIdl, page, size);
         if (service.isB()) {
-            return Result.ok(ResultCode.SUCCESS, new PageResult<>(service.getTotal().longValue(),service.getRows()));
+            return Result.ok(ResultCode.SUCCESS, service.getRows());
         }
         return Result.ok(ResultCode.FAIL, null);
     }
@@ -149,7 +150,7 @@ public class ArticleController {
     public Result getArticleBycolumnIdPageSize(@PathVariable("columnId") String columnId,
                                               @PathVariable(value = "page", required = false) int page,
                                               @PathVariable(value = "size", required = false) int size){
-        ResultService<List<Article>> service = articleService.getArticleBycolumnIdPageSize(columnId, page, size);
+        ResultService<PageResult<Article>> service = articleService.getArticleBycolumnIdPageSize(columnId, page, size);
         if (service.isB()) {
             return Result.ok(ResultCode.SUCCESS, service.getRows());
         }
@@ -179,5 +180,29 @@ public class ArticleController {
         }
         return Result.ok(ResultCode.FAIL, null);
     }
+
+    /**
+     *  参数: 文章id, 用户id
+     *  订阅文章作者
+     *  1. 用户之间的文章订阅关系的数据存放在redis中
+     *  2. 用户订阅作者后, 将文章作者id放到自己的订阅集合set中, 将用户的id放到作者的订阅者集合中
+     */
+    @PostMapping("/subscribe")
+    public Result subscribe(@RequestBody Map map) {
+        if (map == null || map.get("articleId") == null || map.get("userId") == null) {
+            return Result.ok(ResultCode.FAIL, null);
+        }
+        // 获取文章id
+        String articleId = map.get("articleId").toString();
+        // 获取用户id
+        String userId = map.get("userId").toString();
+        ResultService<Void> service = articleService.subscribe(articleId, userId);
+        // 返回true就是订阅文章作者   返回false就是取消订阅
+        if (service.isB()) {
+            return Result.ok(ResultCode.SUBSCRIBE, null);
+        }
+        return Result.ok(ResultCode.UNSUBSCRIBE, null);
+    }
+
 
 }

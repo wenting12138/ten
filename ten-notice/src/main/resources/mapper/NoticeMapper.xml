@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wen.notice.dao.NoticeMapper">
+    <resultMap id="BaseResultMap" type="com.wen.common.model.Notice">
+        <id property="id" column="id"/>
+        <result property="receiverId" column="receiverId"/>
+        <result property="operatorId" column="operatorId"/>
+        <result property="action" column="action"/>
+        <result property="targetType" column="targetType"/>
+        <result property="targetId" column="targetId"/>
+        <result property="createTime" column="createtime"/>
+        <result property="type" column="type"/>
+        <result property="state" column="state"/>
+        <result property="count" column="count"/>
+    </resultMap>
+
+    <sql id="dynamicSql">
+        id,receiverId,operatorId,action,targetType,targetId,createtime,type,state
+    </sql>
+
+    <!--void save(Notice notice);-->
+    <insert id="save">
+        insert into tb_notice(id,receiverId,operatorId,action,targetType,targetId,createtime,type,state)
+        values(#{id},#{receiverId},#{operatorId},#{action},#{targetType},#{targetId},#{createTime},#{type},#{state})
+    </insert>
+
+    <select id="findOneById" parameterType="string">
+        select <include refid="dynamicSql"/>
+        from tb_notice
+        where id = #{id}
+    </select>
+<!--  Map<String, Object> selectPageCondition(@Param("notice") Notice notice, @Param("page")int page,@Param("size") int size);-->
+    <select id="selectPageCondition" resultMap="BaseResultMap">
+        select <include refid="dynamicSql"/>
+        from tb_notice
+        <where>
+            <if test="notice.id != null">
+                id = #{notice.id}
+            </if>
+            <if test="notice.receiverId != null">
+                and receiverId = #{notice.receiverId}
+            </if>
+            <if test="notice.operatorId != null">
+                and operatorId = #{notice.operatorId}
+            </if>
+            <if test="notice.action != null">
+                and action = #{notice.action}
+            </if>
+            <if test="notice.targetType != null">
+                and targetType = #{notice.targetType}
+            </if>
+            <if test="notice.targetId != null">
+                and targetId = #{notice.targetId}
+            </if>
+            <if test="notice.createTime != null">
+                and createtime = #{notice.createTime}
+            </if>
+            <if test="notice.type != null">
+                and type = #{notice.type}
+            </if>
+            <if test="notice.state != null">
+                and state = #{notice.state}
+            </if>
+        </where>
+    </select>
+
+<!--    void update(Notice notice);-->
+    <update id="update" parameterType="com.wen.common.model.Notice">
+        update tb_notice
+        <set>
+                <if test="receiverId != null">
+                    and receiverId = #{receiverId}
+                </if>
+                <if test="operatorId != null">
+                    and operatorId = #{operatorId}
+                </if>
+                <if test="action != null">
+                    and action = #{action}
+                </if>
+                <if test="targetType != null">
+                    and targetType = #{targetType}
+                </if>
+                <if test="targetId != null">
+                    and targetId = #{targetId}
+                </if>
+                <if test="createTime != null">
+                    and createtime = #{createTime}
+                </if>
+                <if test="type != null">
+                    and type = #{notice.type}
+                </if>
+                <if test="state != null">
+                    and state = #{state}
+                </if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

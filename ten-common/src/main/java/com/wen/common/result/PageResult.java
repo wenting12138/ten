@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 public class PageResult<T> {
 
-    private Long total;  // 总条数
+    private Long total = 0L;  // 总条数
     private List<T> rows; // 本页总数
 }

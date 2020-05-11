@@ -10,12 +10,24 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>ten-article</artifactId>
     <description>文章微服务</description>
-    <properties>
-        <alibaba-druid-version>1.1.10</alibaba-druid-version>
-    </properties>
 
     <dependencies>
-<!--        mongodb-->
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <!--        mongodb-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>

@@ -1,0 +1,31 @@
+server:
+  port: 9013
+spring:
+  application:
+    name: ten-encrypt
+
+zuul:
+  routes:
+    # 文章微服务
+    ten-article:
+      # 路由规则
+      path: /article/**
+      # eureka注册中心的服务id
+      serverId: ten-article
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    # 发现ip
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}

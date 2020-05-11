@@ -2,6 +2,7 @@ package com.wen.article.service;
 
 import com.wen.article.dto.ArticleDto;
 import com.wen.common.model.Article;
+import com.wen.common.result.PageResult;
 import com.wen.common.result.ResultService;
 
 import java.util.List;
@@ -41,7 +42,7 @@ public interface ArticleService {
      * @param article
      * @return
      */
-    ResultService<List<Article>> selectByCondition(ArticleDto article);
+    ResultService<PageResult<Article>> selectByCondition(ArticleDto article);
 
     /**
      *  删除文章
@@ -57,7 +58,7 @@ public interface ArticleService {
      * @param size
      * @return
      */
-    ResultService<List<Article>> selectByConditionPageSize(ArticleDto article, Integer page, Integer size);
+    ResultService<PageResult<Article>> selectByConditionPageSize(ArticleDto article, Integer page, Integer size);
 
     /**
      *  点赞
@@ -73,7 +74,7 @@ public interface ArticleService {
      * @param size
      * @return
      */
-    ResultService<List<Article>> getArticleByChannelPageSize(String channel, int page, int size);
+    ResultService<PageResult<Article>> getArticleByChannelPageSize(String channel, int page, int size);
 
     /**
      *  根据专栏id分页查询文章列表
@@ -82,7 +83,7 @@ public interface ArticleService {
      * @param size
      * @return
      */
-    ResultService<List<Article>> getArticleBycolumnIdPageSize(String columnId, int page, int size);
+    ResultService<PageResult<Article>> getArticleBycolumnIdPageSize(String columnId, int page, int size);
 
     /**
      *  文章审核
@@ -97,4 +98,11 @@ public interface ArticleService {
      */
     ResultService<List<Article>> topArticle();
 
+    /**
+     *  订阅作者
+     * @param articleId
+     * @param userId
+     * @return
+     */
+    ResultService<Void> subscribe(String articleId, String userId);
 }

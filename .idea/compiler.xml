@@ -7,9 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mogodb-demo" />
-        <module name="ten-article" />
+        <module name="ten-notice" />
         <module name="ten-common" />
+        <module name="ten-user" />
+        <module name="ten-article" />
+        <module name="ten-eureka" />
+        <module name="mogodb-demo" />
+        <module name="Spring-websocket" />
+        <module name="ten-encrypt" />
       </profile>
     </annotationProcessing>
   </component>
@@ -19,6 +24,10 @@
       <module name="ten" options="-parameters" />
       <module name="ten-article" options="-parameters" />
       <module name="ten-common" options="-parameters" />
+      <module name="ten-encrypt" options="-parameters" />
+      <module name="ten-eureka" options="-parameters" />
+      <module name="ten-notice" options="-parameters" />
+      <module name="ten-user" options="-parameters" />
     </option>
   </component>
 </project>

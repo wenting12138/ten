@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wen.notice.dao.NoticeFreshMapper">
+    <resultMap id="BaseResultMap" type="com.wen.common.model.NoticeFresh">
+        <id property="userId" column="userId"/>
+        <result property="noticeId" column="noticeId"/>
+    </resultMap>
+    <sql id="dynamicSql">
+        userId,noticeId
+    </sql>
+
+    <!--void save(Notice notice);-->
+    <insert id="save">
+        insert into tb_notice_fresh(userId,noticeId)
+        values(#{userId},#{noticeId})
+    </insert>
+
+    <select id="findOneById" parameterType="string">
+        select <include refid="dynamicSql"/>
+        from tb_notice_fresh
+        where id = #{id}
+    </select>
+
+<!--    List<NoticeFresh> findByUserPage(@Param("id") String userId,@Param("page") int page,@Param("size") int size);-->
+    <select id="findByUserPage" resultMap="BaseResultMap">
+        select <include refid="dynamicSql"/>
+        from tb_notice_fresh
+        where userId = #{id}
+    </select>
+
+<!-- void delNoticeFresh(NoticeFresh fresh);-->
+    <delete id="delNoticeFresh">
+        delete from tb_notice_fresh
+        where userId = #{userId} and noticeId = #{noticeId}
+    </delete>
+
+</mapper>

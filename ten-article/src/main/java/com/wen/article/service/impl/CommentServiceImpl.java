@@ -112,7 +112,7 @@ public class CommentServiceImpl implements CommentService {
         query.addCriteria(Criteria.where("_id").is(commentId));
         // 封装修改的值
         Update update = new Update();
-        // TODO userId
+        // TODO userId 用户模块
         String userId = "123";
 
         String key = THUMBUPFIX + "_" + commentId + "_" + userId;
@@ -124,7 +124,7 @@ public class CommentServiceImpl implements CommentService {
             redisTemplate.boundValueOps(key).set("1");
         }else {
             // redis 里有这个用户的信息说明 是要取消点赞的
-            update.inc("thumbup", -1);
+            update.inc("thumbup",   -1);
             redisTemplate.delete(key);
         }
         mongoTemplate.updateFirst(query, update, "comment");
