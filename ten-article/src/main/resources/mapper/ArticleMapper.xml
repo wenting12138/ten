@@ -226,7 +226,6 @@
                 and type = #{article.type}
             </if>
         </where>
-        limit #{page}, #{size}
     </select>
 
 <!--    void addThumbup(@Param("id") String articleId);-->
@@ -244,7 +243,6 @@
                 channelid = #{channel}
             </if>
         </where>
-        limit #{page}, #{size}
     </select>
 
 <!-- List<Article> getArticleBycolumnIdPageSize(@Param("columnId")String columnId,@Param("page") int page,@Param("size") int size);-->
@@ -257,7 +255,6 @@
                 columnid = #{columnId}
             </if>
         </where>
-        limit #{page}, #{size}
     </select>
 
 <!--        void check(@Param("id") String articleId);-->

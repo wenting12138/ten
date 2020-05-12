@@ -37,13 +37,13 @@ public class ArticleDto {
     private String istop;
 
     // 浏览量
-    private Integer visits = 0;
+    private Integer visits;
 
     // 点赞量
-    private Integer thumbup = 0;
+    private Integer thumbup;
 
     // 评论量
-    private Integer comment = 0;
+    private Integer comment;
 
     // 审核状态  0: 未审核  1: 已审核
     private String state;

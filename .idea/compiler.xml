@@ -17,12 +17,16 @@
         <module name="ten-encrypt" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ten-auth" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mogodb-demo" options="-parameters" />
       <module name="ten" options="-parameters" />
       <module name="ten-article" options="-parameters" />
+      <module name="ten-auth" options="-parameters" />
       <module name="ten-common" options="-parameters" />
       <module name="ten-encrypt" options="-parameters" />
       <module name="ten-eureka" options="-parameters" />

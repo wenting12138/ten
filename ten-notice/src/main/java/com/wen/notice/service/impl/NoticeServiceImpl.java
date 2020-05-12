@@ -66,9 +66,10 @@ public class NoticeServiceImpl implements NoticeService {
         NoticeFresh noticeFresh = new NoticeFresh();
         noticeFresh.setNoticeId(id);
         // 待通知消息的用户的id   消息的接收方的id
-        noticeFresh.setUserId(notice.getReceiverId());
-        noticeFreshMapper.save(noticeFresh);
-        noticeMapper.save(notice);
+
+//        noticeFresh.setUserId(notice.getReceiverId());
+//        notice  FreshMapper.save(noticeFresh);
+//        noticeMapper.save(notice);
         return new ResultService<>(true);
     }
 

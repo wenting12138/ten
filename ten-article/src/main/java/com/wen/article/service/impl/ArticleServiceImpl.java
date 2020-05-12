@@ -13,6 +13,12 @@ import com.wen.common.model.Notice;
 import com.wen.common.result.PageResult;
 import com.wen.common.result.ResultService;
 import com.wen.common.utils.IdWorker;
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.DirectExchange;
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.rabbit.core.RabbitAdmin;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -71,7 +77,7 @@ public class ArticleServiceImpl implements ArticleService {
 
         // 创建文章后, 发送消息给订阅者
         Set<String> members = redisTemplate.boundSetOps(authorSubscribeSetPrefix + userId).members();
-        if (members == null || members.size() == 0) {
+        if (effect == 0 ||  members == null || members.size() == 0) {
             return new ResultService<>(false);
         }
         Notice notice = null;
@@ -92,9 +98,9 @@ public class ArticleServiceImpl implements ArticleService {
             notice = null;
         }
 
-        if (effect == 0) {
-            return new ResultService<>(false);
-        }
+        // 发送消息给rabbitmq
+        rabbitTemplate.convertAndSend(exchangeName, userId, id);
+
         return new ResultService<>(true);
     }
 
@@ -149,6 +155,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    @Transactional
     public ResultService<Void> addThumbup(String articleId) {
         Article article = articleMapper.selectOneById(articleId);
         if (article == null) {
@@ -172,8 +179,19 @@ public class ArticleServiceImpl implements ArticleService {
         // 通知类型
         notice.setType(Contants.user);
         noticeClient.save(notice);
+
+        // 1. 创建Rabbitmq管理器
+        RabbitAdmin rabbitAdmin = new RabbitAdmin(rabbitTemplate.getConnectionFactory());
+        // 3. 声明队列 ,  每个作者都有自己的队列
+        Queue queue = new Queue(article_thumbup + article.getUserId(), true);
+        rabbitAdmin.declareQueue(queue);
+        // 发送消息
+        rabbitTemplate.convertAndSend(article_thumbup + article.getUserId(), articleId);
+
         return new ResultService<>(true);
     }
+
+    private static final String article_thumbup = "article_thumbup_";
 
     @Override
     public ResultService<PageResult<Article>> getArticleByChannelPageSize(String channel, int page, int size) {
@@ -230,6 +248,11 @@ public class ArticleServiceImpl implements ArticleService {
     private static final String userSubscribeSetPrefix = "article_user_subscribe_";
     private static final String authorSubscribeSetPrefix = "article_author_subscribe_";
 
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+    private static final String exchangeName = "article_subscribe";
+    private static final String queueNamePrefix = "article_subscribe_";
+
     @Override
     public ResultService<Void> subscribe(String articleId, String userId) {
         // 判断文章是否存在, 如果不存在, 就返回
@@ -237,8 +260,24 @@ public class ArticleServiceImpl implements ArticleService {
         if (article == null) {
             return new ResultService<>(false);
         }
+
+
         // 获取文章作者id
         String articleUserId = article.getUserId();
+
+
+        // 1. 创建Rabbitmq管理器
+        RabbitAdmin rabbitAdmin = new RabbitAdmin(rabbitTemplate.getConnectionFactory());
+        // 2. 声明交换机
+        DirectExchange exchange = new DirectExchange(exchangeName);
+        rabbitAdmin.declareExchange(exchange);
+        // 3. 声明队列 ,  每个用户都有自己的队列
+        Queue queue = new Queue(queueNamePrefix + userId, true);
+        // 4. 声明交换机和队列的绑定关系
+        Binding binding = BindingBuilder.bind(queue).to(exchange).with(articleUserId);
+
+
+
         // 存放用户订阅信息的集合
         String userSubscribeSetKey = userSubscribeSetPrefix + userId;
         // 存放作者的订阅者的集合
@@ -250,12 +289,22 @@ public class ArticleServiceImpl implements ArticleService {
             redisTemplate.boundSetOps(userSubscribeSetKey).remove(articleUserId);
             // 把用户id存在文章用户的订阅者set集合删除
             redisTemplate.boundSetOps(authorSubscribeSetKey).remove(userId);
+
+            // 如果取消订阅  就删除队列的绑定关系
+            rabbitAdmin.removeBinding(binding);
+
             return new ResultService<>(false);
         }else {
             // 把文章作者id存入用户的订阅作者set集合中
             redisTemplate.boundSetOps(userSubscribeSetKey).add(articleUserId);
             // 把用户id存在文章用户的订阅者set集合中
             redisTemplate.boundSetOps(authorSubscribeSetKey).add(userId);
+
+            // 声明队列
+            rabbitAdmin.declareQueue(queue);
+            // 绑定关系
+            rabbitAdmin.declareBinding(binding);
+
             return new ResultService<>(true);
         }
     }
