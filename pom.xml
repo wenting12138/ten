@@ -16,6 +16,15 @@
         <module>ten-eureka</module>
         <module>ten-encrypt</module>
         <module>ten-notice</module>
+        <module>ten-base</module>
+        <module>ten_recruit</module>
+        <module>ten_qa</module>
+        <module>ten-spit</module>
+        <module>ten-search</module>
+        <module>ten-sms</module>
+        <module>ten-friend</module>
+        <module>ten-manager</module>
+        <module>ten-web</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

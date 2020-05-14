@@ -1,0 +1,33 @@
+server: 
+  port: 9002
+spring: 
+  application:  
+    name: ten-recruit #指定服务名
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.27.237.3:3306/tensquare_recruit?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      stat-view-servlet:
+        login-username: admin
+        login-password: 123456
+  jpa: 
+    database: MySQL
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka
+    registry-fetch-interval-seconds: 5
+    # 是否将自己注册进eureka
+    register-with-eureka: true
+    # 是否从eureka中获取信息
+    fetch-registry: true
+  instance:
+    # 发现ip
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}

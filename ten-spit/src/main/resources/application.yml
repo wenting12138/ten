@@ -1,0 +1,45 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: ten-spit
+  jackson:
+    default-property-inclusion: non_null  #s 过滤响应时候的空字段,不在前端显示
+ # mongodb
+  data:
+    mongodb:
+      host: 192.168.73.128
+      port: 27017
+      database: commentdb
+  redis:
+    host: 120.27.237.3
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka
+    registry-fetch-interval-seconds: 5
+    # 是否将自己注册进eureka
+    register-with-eureka: true
+    # 是否从eureka中获取信息
+    fetch-registry: true
+  instance:
+    # 发现ip
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+
+ribbon:
+  ConnectTimeout: 100000 # 连接超时时间(ms)
+  ReadTimeout: 350000 # 通信超时时间(ms)
+  # OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 0 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 0 # 同一实例的重试次数
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 10000 # 熔断超时时长：10000ms

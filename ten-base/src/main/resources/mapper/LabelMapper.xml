@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wen.base.mapper.LabelMapper">
+    <resultMap id="BaseResultMap" type="com.wen.common.model.Label">
+        <id property="id" column="id"/>
+        <result property="labelname" column="labelname"/>
+        <result property="state" column="state"/>
+        <result property="count" column="count"/>
+        <result property="fans" column="fans"/>
+        <result property="recommend" column="recommend"/>
+    </resultMap>
+    <sql id="dynamicSql">
+        id,labelname,state,count,fans,recommend
+    </sql>
+
+    <select id="selectByConditionPage" resultMap="BaseResultMap">
+        select
+        <include refid="dynamicSql"/>
+        from tb_label
+        <where>
+            <if test="label.id != null">
+                id = #{label.id}
+            </if>
+            <if test="label.labelname != null">
+                and labelname like #{label.labelname}
+            </if>
+            <if test="label.state != null">
+                and state = #{label.state}
+            </if>
+            <if test="label.count != null">
+                and count = #{label.count}
+            </if>
+            <if test="label.fans != null">
+                and fans = #{label.fans}
+            </if>
+            <if test="label.recommend != null">
+                and recommend = #{label.recommend}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectByCondition" resultMap="BaseResultMap">
+        select
+        <include refid="dynamicSql"/>
+        from tb_label
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="labelname != null">
+                and labelname like #{labelname}
+            </if>
+            <if test="state != null">
+                and state = #{state}
+            </if>
+            <if test="count != null">
+                and count = #{count}
+            </if>
+            <if test="fans != null">
+                and fans = #{fans}
+            </if>
+            <if test="recommend != null">
+                and recommend = #{recommend}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="selectTopList" resultMap="BaseResultMap" parameterType="string">
+        select <include refid="dynamicSql"/>
+        from tb_label
+        where recommend = #{recommend}
+    </select>
+
+    <select id="selectList" resultMap="BaseResultMap" parameterType="string">
+        select <include refid="dynamicSql"/>
+        from tb_label
+        where state = #{state}
+    </select>
+</mapper>

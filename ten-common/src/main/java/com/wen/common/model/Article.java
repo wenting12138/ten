@@ -1,11 +1,14 @@
 package com.wen.common.model;
 
 import lombok.Data;
+import lombok.ToString;
+
 import java.util.Date;
 /**
  *  文章
  */
 @Data
+@ToString
 public class Article {
 
     // id

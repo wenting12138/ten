@@ -13,6 +13,8 @@ public enum ResultCode {
     REPEATTHEOPERATION(20005, false,"重复操作"),
     SUBSCRIBE(20006, true,"订阅成功"),
     UNSUBSCRIBE(20007, true,"取消订阅成功"),
+    TOKENERROR(20008, false,"令牌有误"),
+    PARAMTERERROR(20009, false,"参数错误"),
     ;
 
     private int code;

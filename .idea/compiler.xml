@@ -7,14 +7,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ten-notice" />
+        <module name="ten-sms" />
+        <module name="ten_qa" />
+        <module name="ten-encrypt" />
         <module name="ten-common" />
         <module name="ten-user" />
         <module name="ten-article" />
-        <module name="ten-eureka" />
+        <module name="ten-search" />
         <module name="mogodb-demo" />
+        <module name="ten-web" />
         <module name="Spring-websocket" />
-        <module name="ten-encrypt" />
+        <module name="ten-friend" />
+        <module name="ten-manager" />
+        <module name="ten_recruit" />
+        <module name="ten-notice" />
+        <module name="ten_active" />
+        <module name="ten-base" />
+        <module name="ten-spit" />
+        <module name="ten-eureka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -27,11 +37,21 @@
       <module name="ten" options="-parameters" />
       <module name="ten-article" options="-parameters" />
       <module name="ten-auth" options="-parameters" />
+      <module name="ten-base" options="-parameters" />
       <module name="ten-common" options="-parameters" />
       <module name="ten-encrypt" options="-parameters" />
       <module name="ten-eureka" options="-parameters" />
+      <module name="ten-friend" options="-parameters" />
+      <module name="ten-manager" options="-parameters" />
       <module name="ten-notice" options="-parameters" />
+      <module name="ten-search" options="-parameters" />
+      <module name="ten-sms" options="-parameters" />
+      <module name="ten-spit" options="-parameters" />
       <module name="ten-user" options="-parameters" />
+      <module name="ten-web" options="-parameters" />
+      <module name="ten_active" options="-parameters" />
+      <module name="ten_qa" options="-parameters" />
+      <module name="ten_recruit" options="-parameters" />
     </option>
   </component>
 </project>

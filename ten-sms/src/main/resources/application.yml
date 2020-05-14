@@ -1,0 +1,15 @@
+server:
+  port: 9009
+spring:
+  rabbitmq:
+    host: 120.27.237.3
+    port: 5672
+    username: guest
+    password: guest
+
+aliyun:
+  sms:
+    accessKeyId: LTAI4G8z3RmQRvDorugJTGyd
+    accessKeySecret: glqwjG47CZu3FtcALicTSFbfcfO4xY
+    templateCode: SMS_188555281  # 短信模板
+    signName: 乐优商城  # 短信签名

@@ -2,11 +2,18 @@ package com.wen.common.model;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 @Data
+@Entity
+@Table(name="tb_user")
 public class User {
 
+    @Id
     private String id;  // id
 
     private String mobile; // 手机
@@ -36,6 +43,11 @@ public class User {
     private Integer fanscount;  // 粉丝数
 
     private Integer followcount;  // 关注数
+
+    @Transient
+    private String role; // 角色
+    @Transient
+    private String jwtToken;  // 令牌
 
 
 

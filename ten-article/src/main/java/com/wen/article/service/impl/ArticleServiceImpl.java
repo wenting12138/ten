@@ -1,8 +1,11 @@
 package com.wen.article.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.wen.article.constants.Contants;
+import com.wen.article.constants.RedisConstant;
 import com.wen.article.dao.ArticleMapper;
 import com.wen.article.dto.ArticleDto;
 import com.wen.article.feignclient.NoticeClient;
@@ -13,6 +16,7 @@ import com.wen.common.model.Notice;
 import com.wen.common.result.PageResult;
 import com.wen.common.result.ResultService;
 import com.wen.common.utils.IdWorker;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
@@ -26,11 +30,14 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 @Service
+@Slf4j
 public class ArticleServiceImpl implements ArticleService {
 
     @Resource
@@ -43,12 +50,45 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     private NoticeClient noticeClient;
 
+    private static final String article_prefix = "article_findOne_";
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @Override
     public ResultService<Article> selectOneById(String id) {
+
+        // 先从redis中查询
+        String key = article_prefix + id;
+        // 先从redis中查,是否有缓存
+        String articleJson = redisTemplate.opsForValue().get(key);
+        log.info("从缓存中去数据: article: {}", articleJson);
+        Article readValue = null;
+        // 如果有, 就直接返回
+        if (articleJson != null) {
+            try {
+                readValue = objectMapper.readValue(articleJson, Article.class);
+            } catch (IOException e) {
+                log.info("ArticleServiceImpl<< selectOneById() 反序列化失败..");
+                e.printStackTrace();
+            }
+            return new ResultService<>(true, 1, readValue);
+        }
+        // 没有.就从数据库中查询后
         Article article = articleMapper.selectOneById(id);
+        log.info("从数据库中查询到article: {}", article);
         if (article == null) {
             return new ResultService<>(false);
         }
+        try {
+            // 放入redis中
+            redisTemplate.opsForValue().set(key, objectMapper.writeValueAsString(article), RedisConstant.redisExpire, TimeUnit.HOURS);
+            log.info("把数据库中查到的数据放入缓存中...");
+        } catch (JsonProcessingException e) {
+            log.info("ArticleServiceImpl<< selectOneById() 序列化失败..");
+            e.printStackTrace();
+        }
+        log.info("方法返回中...");
         return new ResultService<>(true, 1, article);
     }
 
@@ -110,6 +150,13 @@ public class ArticleServiceImpl implements ArticleService {
         Article article = wrapperArticle(dto);
         article.setUpdateTime(new Date());
         article.setIsPublic(articleId);
+
+        try {
+            redisTemplate.opsForValue().set(article_prefix + articleId, objectMapper.writeValueAsString(article_prefix));
+            log.info("修改缓存中的数据: ArticleServiceImpl >> update(): articleId{}", articleId);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
         int effect = articleMapper.update(article);
         return new ResultService<>(true);
     }
@@ -129,6 +176,8 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     @Transactional
     public ResultService<Void> delete(String articleId) {
+        redisTemplate.delete(article_prefix + articleId);
+        log.info("从缓存删除数据: articleId: {}", articleId);
         articleMapper.deleteById(articleId);
         return new ResultService<>(true);
     }

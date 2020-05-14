@@ -15,6 +15,13 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://120.27.237.3:3306/tensquare_user?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+  rabbitmq:
+    host: 120.27.237.3
+    port: 5672
+    username: guest
+    password: guest
+  redis:
+    host: 120.27.237.3
 
 mybatis:
   mapper-locations: classpath:/mapper/*.xml

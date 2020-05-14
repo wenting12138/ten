@@ -1,0 +1,144 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: ten-manager
+
+zuul:
+  routes:
+    # 文章微服务
+    ten-article:
+      # 路由规则
+      path: /article/**
+      # eureka注册中心的服务id
+      serverId: ten-article
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+      # 企业及招聘
+    ten-recruit:
+      # 路由规则
+      path: /recruit/**
+      # eureka注册中心的服务id
+      serverId: ten-recruit
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+      # 问答
+    ten-qa:
+      # 路由规则
+      path: /qa/**
+      # eureka注册中心的服务id
+      serverId: ten-qa
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+      # 活动
+    ten-gathering:
+      # 路由规则
+      path: /gathering/**
+      # eureka注册中心的服务id
+      serverId: ten-gathering
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+      # 用户
+    ten-user:
+      # 路由规则
+      path: /user/**
+      # eureka注册中心的服务id
+      serverId: ten-user
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+    # 吐槽
+    ten-spit:
+      # 路由规则
+      path: /spit/**
+      # eureka注册中心的服务id
+      serverId: ten-spit
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+    # 搜索
+    ten-search:
+      # 路由规则
+      path: /search/**
+      # eureka注册中心的服务id
+      serverId: ten-search
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+    # 消息
+    ten-notice:
+      # 路由规则
+      path: /notice/**
+      # eureka注册中心的服务id
+      serverId: ten-notice
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+    # 消息
+    ten-friend:
+      # 路由规则
+      path: /friend/**
+      # eureka注册中心的服务id
+      serverId: ten-friend
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+    # base
+    ten-base:
+      # 路由规则
+      path: /base/**
+      # eureka注册中心的服务id
+      serverId: ten-base
+      # 所有article的请求都进行转发
+      strip-prefix: true
+      # 设置敏感头
+      sensitiveHeaders:
+      # 让网关处理cookie和重定向
+      customSensitiveHeaders: true
+jwt:
+  config:
+    # 盐
+    key: wenting
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    # 发现ip
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}

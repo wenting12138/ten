@@ -1,0 +1,25 @@
+server:
+  port: 9007
+spring:
+  application:
+    name: ten-search
+  data:
+    elasticsearch:
+      cluster-name: xc
+      cluster-nodes: 127.0.0.1:9300
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka
+    registry-fetch-interval-seconds: 5
+    # 是否将自己注册进eureka
+    register-with-eureka: true
+    # 是否从eureka中获取信息
+    fetch-registry: true
+  instance:
+    # 发现ip
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
