@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="SSM:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2ae4efd8-fce2-4602-b723-a6fdff98d706" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ten-config/target/app.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ten-config/target/app.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ten-config/target/docker/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ten-config/target/docker/app.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ten-config/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ten-config/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ten-config/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ten-config/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ten-config/target/test-classes/image_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ten-config/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ten-config/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ten" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="JUnit4 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="1ba055af-431b-4cbf-b8ee-f78aab1fe267" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ten-base/pom.xml" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="E:\develop\workspace\ten\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven101" />
+        <option name="mavenHome" value="D:/maven/apache-maven-3.6.2" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.6.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bcOcw6Swi4K1zx9sFT9SHeMqTp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ten-article/src/main/resources" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15332031" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="service.view.auto.scroll.from.source" value="true" />
+    <property name="service.view.auto.scroll.to.source" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.wen.encrypt.service" />
+      <recent name="com.wen.article.service.impl" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\develop\workspace\ten\ten-user\src\main\resources\static\js" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="manager" />
+      <recent name="com.wen.common.model" />
+      <recent name="com.wen.qa.interceptor" />
+      <recent name="com.wen.sms.utils" />
+      <recent name="com.wen.notice.netty" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\develop\workspace\ten\ten-article\src\main\resources" />
+      <recent name="E:\develop\workspace\ten\ten-encrypt\src\main\resources" />
+      <recent name="E:\develop\workspace\ten\ten-friend\src\main\resources" />
+      <recent name="E:\develop\workspace\ten\ten-notice\src\main\resources" />
+      <recent name="E:\develop\workspace\ten\ten-search\src\main\resources" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.wen.auth.config" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.WebMain9012">
+    <configuration name="ParseJwt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wen.common.ParseJwt" />
+      <module name="ten-common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wen.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BaseMain9001" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ten-base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wen.base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wen.base.BaseMain9001" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigMain12000" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ten-config" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wen.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wen.config.ConfigMain12000" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaMain6868" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ten-eureka" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wen.eureka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wen.eureka.EurekaMain6868" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebMain9012" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ten-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wen.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wen.web.WebMain9012" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 8.5.47" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.47" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="SSM:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Spring-websocket" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_8_5_47_ten" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64241" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="SSM:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.47" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Spring-websocket/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="SSM:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Spring-websocket" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_ten" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64241" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="SSM:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.ParseJwt" />
+      <item itemvalue="Spring Boot.ConfigMain12000" />
+      <item itemvalue="Spring Boot.BaseMain9001" />
+      <item itemvalue="Spring Boot.EurekaMain6868" />
+      <item itemvalue="Spring Boot.WebMain9012" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.47" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BaseMain9001" />
+        <item itemvalue="Spring Boot.ConfigMain12000" />
+        <item itemvalue="Spring Boot.WebMain9012" />
+        <item itemvalue="Spring Boot.EurekaMain6868" />
+        <item itemvalue="Application.ParseJwt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.19502075" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\1\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2ae4efd8-fce2-4602-b723-a6fdff98d706" name="Default Changelist" comment="" />
+      <created>1588927997994</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588927997994</updated>
+      <workItem from="1588928051690" duration="383000" />
+      <workItem from="1588928469374" duration="195000" />
+      <workItem from="1588928666605" duration="21854000" />
+      <workItem from="1588982984357" duration="8106000" />
+      <workItem from="1588995441007" duration="26537000" />
+      <workItem from="1589070054210" duration="34722000" />
+      <workItem from="1589155505326" duration="38159000" />
+      <workItem from="1589242856756" duration="7898000" />
+      <workItem from="1589252032170" duration="2895000" />
+      <workItem from="1589256023143" duration="5192000" />
+      <workItem from="1589261805085" duration="7729000" />
+      <workItem from="1589269700457" duration="662000" />
+      <workItem from="1589270392287" duration="14035000" />
+      <workItem from="1589329684975" duration="33047000" />
+      <workItem from="1589415736502" duration="32981000" />
+      <workItem from="1589465073967" duration="717000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="261" y="0" key="#Project_Structure" timestamp="1589420259437">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="261" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1589420259437" />
+    <state x="94" y="37" width="1318" height="787" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589262766823">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="94" y="37" width="1318" height="787" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589262766823" />
+    <state x="530" y="58" key="#com.intellij.ide.util.MemberChooser" timestamp="1589439178240">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="530" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589439178240" />
+    <state x="437" y="140" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1589179110510">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="437" y="140" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1589179110510" />
+    <state x="246" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1589028558783">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="246" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.824@0.0.1536.824" timestamp="1589028558783" />
+    <state x="348" y="327" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1588986754804">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="348" y="327" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1588986754804" />
+    <state x="436" y="101" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589352814985">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="436" y="101" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589352814985" />
+    <state x="449" y="240" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1589252439625">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="240" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1589252439625" />
+    <state width="496" height="546" key="DebuggerActiveHint" timestamp="1589366430311">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="496" height="546" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1589366430311" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1589444980381">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1589444980381" />
+    <state x="499" y="110" key="FileChooserDialogImpl" timestamp="1589358700319">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="110" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589358700319" />
+    <state x="623" y="282" width="320" height="344" key="Github.ShareDialog" timestamp="1588928863732">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="623" y="282" width="320" height="344" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1588928863732" />
+    <state width="1163" height="371" key="GridCell.Tab.0.bottom" timestamp="1589465063977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589465063977" />
+    <state width="1163" height="371" key="GridCell.Tab.0.center" timestamp="1589465063977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589465063977" />
+    <state width="1163" height="371" key="GridCell.Tab.0.left" timestamp="1589465063977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589465063977" />
+    <state width="1163" height="371" key="GridCell.Tab.0.right" timestamp="1589465063977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589465063977" />
+    <state width="1163" height="371" key="GridCell.Tab.1.bottom" timestamp="1589465063977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589465063977" />
+    <state width="1163" height="371" key="GridCell.Tab.1.center" timestamp="1589465063977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589465063977" />
+    <state width="1163" height="371" key="GridCell.Tab.1.left" timestamp="1589465063977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589465063977" />
+    <state width="1163" height="371" key="GridCell.Tab.1.right" timestamp="1589465063977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589465063977" />
+    <state width="1163" height="371" key="GridCell.Tab.2.bottom" timestamp="1589465063978">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589465063978" />
+    <state width="1163" height="371" key="GridCell.Tab.2.center" timestamp="1589465063978">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1589465063978" />
+    <state width="1163" height="371" key="GridCell.Tab.2.left" timestamp="1589465063977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1589465063977" />
+    <state width="1163" height="371" key="GridCell.Tab.2.right" timestamp="1589465063978">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1163" height="371" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1589465063978" />
+    <state width="1141" height="334" key="GridCell.Tab.3.bottom" timestamp="1589031114654">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1141" height="334" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589031114654" />
+    <state width="1141" height="334" key="GridCell.Tab.3.center" timestamp="1589031114653">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1141" height="334" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1589031114653" />
+    <state width="1141" height="334" key="GridCell.Tab.3.left" timestamp="1589031114653">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1141" height="334" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1589031114653" />
+    <state width="1141" height="334" key="GridCell.Tab.3.right" timestamp="1589031114653">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1141" height="334" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1589031114653" />
+    <state x="249" y="86" key="IDE.errors.dialog" timestamp="1589461504148">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="86" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1589461504148" />
+    <state x="186" y="0" key="Maven.ArtifactSearchDialog" timestamp="1589001529512">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="186" y="0" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1589001529512" />
+    <state x="300" y="1" key="Registry" timestamp="1588930461555">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="300" y="1" key="Registry/0.0.1536.824@0.0.1536.824" timestamp="1588930461555" />
+    <state x="553" y="339" key="ReplaceDuplicatesPrompt" timestamp="1588995701757">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="553" y="339" key="ReplaceDuplicatesPrompt/0.0.1536.824@0.0.1536.824" timestamp="1588995701757" />
+    <state x="117" y="0" key="SettingsEditor" timestamp="1589270365514">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="117" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589270365514" />
+    <state width="623" height="555" key="SwitcherDM" timestamp="1589252777803">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="623" height="555" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1589252777803" />
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1589252769468">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589252769468" />
+    <state x="441" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1589415744752">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="441" y="190" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589415744752" />
+    <state x="534" y="17" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589252555954">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="534" y="17" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1589252555954" />
+    <state x="511" y="81" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1589090245187">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="511" y="81" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1589090245187" />
+    <state x="436" y="122" width="663" height="593" key="extract.method.dialog" timestamp="1588995699116">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="436" y="122" width="663" height="593" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1588995699116" />
+    <state x="310" y="0" width="972" height="824" key="find.popup" timestamp="1589252569394">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="310" y="0" width="972" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1589252569394" />
+    <state width="750" height="530" key="javadoc.popup" timestamp="1589164102419">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="750" height="530" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1589164102419" />
+    <state x="263" y="81" width="1104" height="632" key="new project wizard" timestamp="1589443650860">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="263" y="81" width="1104" height="632" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1589443650860" />
+    <state x="509" y="76" width="875" height="663" key="recent.locations.popup" timestamp="1589252526240">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="509" y="76" width="875" height="663" key="recent.locations.popup/0.0.1536.824@0.0.1536.824" timestamp="1589252526240" />
+    <state x="341" y="183" key="run.anything.popup" timestamp="1589376219940">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="341" y="183" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589376219940" />
+    <state x="347" y="0" width="840" height="822" key="search.everywhere.popup" timestamp="1589431325730">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="347" y="0" width="840" height="822" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589431325730" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ten-article/src/test/java/com/wen/article/service/impl/ArticleServiceImplTest.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="test" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

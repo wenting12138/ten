@@ -18,14 +18,14 @@
         <module name="mogodb-demo" />
         <module name="ten-web" />
         <module name="Spring-websocket" />
-        <module name="ten-friend" />
-        <module name="ten-manager" />
-        <module name="ten_recruit" />
-        <module name="ten-notice" />
-        <module name="ten_active" />
-        <module name="ten-base" />
         <module name="ten-spit" />
+        <module name="ten_active" />
+        <module name="ten_recruit" />
         <module name="ten-eureka" />
+        <module name="ten-manager" />
+        <module name="ten-base" />
+        <module name="ten-friend" />
+        <module name="ten-notice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
