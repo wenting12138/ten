@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ten-config" />
         <module name="ten-sms" />
         <module name="ten_qa" />
         <module name="ten-encrypt" />
@@ -39,6 +40,7 @@
       <module name="ten-auth" options="-parameters" />
       <module name="ten-base" options="-parameters" />
       <module name="ten-common" options="-parameters" />
+      <module name="ten-config" options="-parameters" />
       <module name="ten-encrypt" options="-parameters" />
       <module name="ten-eureka" options="-parameters" />
       <module name="ten-friend" options="-parameters" />

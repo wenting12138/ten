@@ -25,6 +25,7 @@
         <module>ten-friend</module>
         <module>ten-manager</module>
         <module>ten-web</module>
+        <module>ten-config</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

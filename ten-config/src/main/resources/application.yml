@@ -1,0 +1,25 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: ten-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wenting12138/springcloud-config.git
+          username: wenting12138
+          password: wt18832036905
+          timeout: 555555
+      request-read-timeout: 5000000
+  rabbitmq:
+    host: 120.27.237.3
+    port: 5672
+    password: guest
+    username: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+#        include: "*"
